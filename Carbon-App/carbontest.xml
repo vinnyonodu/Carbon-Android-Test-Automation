@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CarbonSuite" parallel="tests" thread-count="2">
+    <test name="carbondroid" preserve-order="true">
+        <classes>
+            <class name="admin.SignIn">
+                <methods>
+                    <include name="skipToSignIn"/>
+                    <include name="emptyNumberEmptyPinTest"/>
+                    <include name="validNumberEmptyPinTest"/>
+                    <include name="emptyNumberValidPinTest"/>
+                    <include name="validNumberIncorrectPinTest"/>
+                    <include name="invalidNumberLengthValidPinTest"/>
+                    <include name="validNumberInvalidPinLengthTest"/>
+                    <include name="validNumberValidPinTest"/>
+                </methods>
+            </class>
+            <class name="admin.AirtimeRecharge">
+                <methods>
+                    <include name="generalLogin"/>
+                    <include name="savedAirtimeRecharge"/>
+                    <include name="emptyPhoneNumberFieldTest"/>
+                    <include name="incompletePhoneNumberTest"/>
+                    <include name="alphabetCheckOnPhoneNumberField"/>
+                    <include name="validPhoneNumberTest"/>
+                    <include name="selectAmountFromDisplayedSnippetTest"/>
+                    <include name="emptyAmountFieldTest"/>
+                    <include name="invalidAmountLengthTest"/>
+                    <include name="validNumberValidAmountTest"/>
+                </methods>
+            </class>
+            <class name="admin.FundWallet">
+                <methods>
+                    <include name="generalLogin"/>
+                    <include name="emptyAmountFieldTest"/>
+                    <include name="alphabetOnAmountFieldTest"/>
+                    <include name="validAmountTest"/>
+                    <include name="attemptToProceedWithoutCardSelection"/>
+                    <include name="validCardTest"/>
+                </methods>
+            </class>
+            <class name="admin.WalletTransactionFilter">
+                <methods>
+                    <include name="generalLogin"/>
+                    <include name="filterWalletTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
